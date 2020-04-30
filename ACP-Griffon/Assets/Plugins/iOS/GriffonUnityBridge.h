@@ -3,7 +3,8 @@
 
 extern "C" {
     const char *GriffonExtensionVersion();
-    void Griffon_StartSession(const chr* url);
+    void Griffon_StartSession(const char* url);
+    bool GriffonRegisterExtension();
 }
 
 #endif
