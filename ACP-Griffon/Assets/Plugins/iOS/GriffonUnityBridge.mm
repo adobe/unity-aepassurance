@@ -2,7 +2,7 @@
 #import "GriffonUnityBridge.h"
 #import "ACPGriffon.h"
 
-bool GriffonRegisterExtension(){
+bool Griffon_RegisterExtension(){
     return [ACPGriffon registerExtension];
 }
 

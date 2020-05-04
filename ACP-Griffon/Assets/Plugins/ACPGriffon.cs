@@ -23,12 +23,12 @@ namespace com.adobe.marketing.mobile
         #if UNITY_IPHONE
 
             [DllImport ("__Internal")]
-            private static extern bool GriffonRegisterExtension();
+            private static extern bool Griffon_RegisterExtension();
 
             [DllImport ("__Internal")]
             private static extern void Griffon_StartSession(string url);
 
-            [DLLImport ("__Internal")]
+            [DllImport ("__Internal")]
             private static extern System.IntPtr Griffon_ExtensionVersion();
             
         #endif
@@ -40,7 +40,7 @@ namespace com.adobe.marketing.mobile
         public static bool GriffonRegisterExtension()
         {
             #if UNITY_IPHONE && !UNITY_EDITOR
-                return GriffonRegisterExtension();
+                return Griffon_RegisterExtension();
 
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){

@@ -2,7 +2,7 @@
 #define Unity_iPhone_ACPGriffonWrapper_h
 
 extern "C" {
-    bool GriffonRegisterExtension();
+    bool Griffon_RegisterExtension();
     void Griffon_StartSession(const char* url);
     const char *GriffonExtensionVersion();
 }
