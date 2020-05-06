@@ -4,7 +4,7 @@
 extern "C" {
     bool Griffon_RegisterExtension();
     void Griffon_StartSession(const char* url);
-    const char *GriffonExtensionVersion();
+    const char *Griffon_ExtensionVersion();
 }
 
 #endif

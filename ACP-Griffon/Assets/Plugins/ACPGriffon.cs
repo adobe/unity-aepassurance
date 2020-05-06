@@ -34,7 +34,7 @@ namespace com.adobe.marketing.mobile
         #endif
 
         /*--------------------------------------------------------
-            * Methods
+        * Methods
         *----------------------------------------------------------------------*/
 
         public static bool GriffonRegisterExtension()
@@ -44,9 +44,8 @@ namespace com.adobe.marketing.mobile
 
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){
-                    bool hasRegistered = griffon.CallStatic<bool> ("registerExtension");
-                    AndroidJNI.DetachCurrentThread();
-                    return hasRegistered;
+                    return griffon.CallStatic<bool> ("registerExtension");
+                    
                 }
                 return false;
             #else
@@ -56,25 +55,24 @@ namespace com.adobe.marketing.mobile
 
         public static void StartSession(string url)
         {
+
             #if UNITY_IPHONE && !UNITY_EDITOR
                 Griffon_StartSession(url);
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){
-                griffon.CallStatic("startSession", url);    
-                AndroidJNI.DetachCurrentThread();
+                    griffon.CallStatic("startSession", url);    
                 }
             #endif
         }
 
         public static string GriffonExtensionVersion()
         {
+            
             #if UNITY_IPHONE && !UNITY_EDITOR
                 return Marshal.PtrToStringAnsi(Griffon_ExtensionVersion());
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){
-                string version = griffon.CallStatic<string> ("extensionVersion");   
-                AndroidJNI.DetachCurrentThread();
-                return version;
+                    return griffon.CallStatic<string> ("extensionVersion");   
                 }
                 return "";
             #else
