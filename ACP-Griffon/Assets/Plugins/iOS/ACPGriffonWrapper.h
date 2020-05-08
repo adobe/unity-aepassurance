@@ -14,9 +14,9 @@ written permission of Adobe.
 #define Unity_iPhone_ACPGriffonWrapper_h
 
 extern "C" {
-    bool Griffon_RegisterExtension();
-    void Griffon_StartSession(const char* url);
-    const char *Griffon_ExtensionVersion();
+    bool acp_RegisterExtension();
+    void acp_StartSession(const char* url);
+    const char *acp_GriffonExtensionVersion();
 }
 
 #endif

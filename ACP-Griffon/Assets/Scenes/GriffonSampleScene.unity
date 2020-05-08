@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 186232472}
   - component: {fileID: 186232471}
   m_Layer: 5
-  m_Name: Version
+  m_Name: ResultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.6025625}
   m_AnchorMax: {x: 0.84755564, y: 0.688}
-  m_AnchoredPosition: {x: 9.4921875, y: 32}
-  m_SizeDelta: {x: 13.9609375, y: 22.031311}
+  m_AnchoredPosition: {x: 9.4921875, y: 51.5}
+  m_SizeDelta: {x: 13.9609375, y: -28.978699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186232471
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
     m_Alignment: 4
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 205474523}
   - component: {fileID: 205474522}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonExtension
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.35859376}
   m_AnchorMax: {x: 0.5, y: 0.35859376}
-  m_AnchoredPosition: {x: 0.15100098, y: 30.5}
+  m_AnchoredPosition: {x: 0.070648, y: -69}
   m_SizeDelta: {x: 552.0562, y: 96.7601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205474522
@@ -279,18 +279,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205474523}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1917467395}
-        m_MethodName: getGriffonExtensionVersion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &205474523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.3878, y: 400.5}
-  m_SizeDelta: {x: 552.2011, y: 154.59169}
+  m_AnchoredPosition: {x: -9.3878, y: 508.5}
+  m_SizeDelta: {x: 552.2011, y: 124.58571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496385258
 MonoBehaviour:
@@ -560,7 +549,7 @@ GameObject:
   - component: {fileID: 756390535}
   - component: {fileID: 756390534}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonStartSession
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,7 +572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.53400004}
   m_AnchorMax: {x: 0.5, y: 0.53400004}
-  m_AnchoredPosition: {x: -0.002090454, y: 8.400002}
+  m_AnchoredPosition: {x: -0.002121, y: -43.52}
   m_SizeDelta: {x: 552.2017, y: 102.88397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756390534
@@ -628,18 +617,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 756390535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1917467395}
-        m_MethodName: startGriffonSession
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &756390535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,5 +929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c29ec860353f4c9392f02054a8c68ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _btnGriffonStartSession: {fileID: 0}
-  _btnGriffonExtensionVersion: {fileID: 0}
+  resultText: {fileID: 186232471}
+  btnGriffonStartSession: {fileID: 756390534}
+  btnGriffonExtensionVersion: {fileID: 205474522}

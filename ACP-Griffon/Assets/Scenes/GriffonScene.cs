@@ -16,13 +16,14 @@ using UnityEngine.UI;
 using com.adobe.marketing.mobile;
 using AOT;
 
+
 public class GriffonScene : MonoBehaviour
 {
     private const string LOG_TAG = "GriffonScene:: ";
     //UI Fields
-    public Text versionNameText;
-    public Button _btnGriffonStartSession;
-    public Button _btnGriffonExtensionVersion;
+    public Text resultText; //For Testing purpose.
+    public Button btnGriffonStartSession;
+    public Button btnGriffonExtensionVersion;
 
     // Core callbacks
     [MonoPInvokeCallback(typeof(AdobeStartCallback))]
@@ -35,7 +36,8 @@ public class GriffonScene : MonoBehaviour
         }
         else if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            print("HandleStartAdobeCallback iphone");
+            print("HandleStartAdobeCallback iPhone");
+            ACPCore.ConfigureWithAppID("94f571f308d5/00fc543a60e1/launch-c861fab912f7-development");
         }
     }
 
@@ -48,18 +50,13 @@ public class GriffonScene : MonoBehaviour
             ACPCore.SetApplication();
         }
         
-        bool hasRegistered = ACPGriffon.GriffonRegisterExtension();
-        print(LOG_TAG + "Griffon Extension Registration" + (hasRegistered ? "Successful" : "Failed"));
+        bool hasRegistered = ACPGriffon.RegisterExtension();
+        resultText.text = "Griffon Registered:: " + hasRegistered.ToString();
         ACPCore.Start(HandleStartAdobeCallback);
         
-        _btnGriffonStartSession.onClick.AddListener(startGriffonSession);
-        _btnGriffonExtensionVersion.onClick.AddListener(getGriffonExtensionVersion);
-    }
+        btnGriffonStartSession.onClick.AddListener(startGriffonSession);
+        btnGriffonExtensionVersion.onClick.AddListener(getGriffonExtensionVersion);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //Griffon plugin methods.
@@ -69,11 +66,10 @@ public class GriffonScene : MonoBehaviour
         ACPGriffon.StartSession(url);
     }
 
-
     public void getGriffonExtensionVersion()
     {
-        string version = ACPGriffon.GriffonExtensionVersion();
+        string version = ACPGriffon.ExtensionVersion();
         print(LOG_TAG + "Griffon version: "+version);
-        versionNameText.text = "Griffone Version: " + version;
+        resultText.text = "Griffon Version: " + version;
     }
 }

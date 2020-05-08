@@ -10,17 +10,17 @@ then your use, modification, or distribution of it requires the prior
 written permission of Adobe.
 */
 
-#import "GriffonUnityBridge.h"
+#import "ACPGriffonWrapper.h"
 #import "ACPGriffon.h"
 
-bool Griffon_RegisterExtension(){
+bool acp_RegisterExtension(){
     return [ACPGriffon registerExtension];
 }
 
-void Griffon_StartSession(const char* url){
+void acp_StartSession(const char* url){
     [ACPGriffon startSession:[[NSURL alloc] initWithString:[NSString stringWithCString:url encoding:NSUTF8StringEncoding ]]];
 }
 
-const char *Griffon_ExtensionVersion(){
+const char *acp_GriffonExtensionVersion(){
     return [[ACPGriffon extensionVersion] cStringUsingEncoding:NSUTF8StringEncoding];
 }

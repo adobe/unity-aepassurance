@@ -25,42 +25,41 @@ namespace com.adobe.marketing.mobile
         /* ===================================================================
         * Static Helper objects for our JNI access
         * =================================================================== */
-        #if UNITY_ANDROID
+#if UNITY_ANDROID
 
         static AndroidJavaClass griffon =
             new AndroidJavaClass("com.adobe.marketing.mobile.Griffon");
 
-        #endif
+#endif
 
         /* ===================================================================
         * extern declarations for iOS Methods
         * =================================================================== */
-        #if UNITY_IPHONE
+#if UNITY_IPHONE
 
             [DllImport ("__Internal")]
-            private static extern bool Griffon_RegisterExtension();
+            private static extern bool acp_RegisterExtension();
 
             [DllImport ("__Internal")]
-            private static extern void Griffon_StartSession(string url);
+            private static extern void acp_StartSession(string url);
 
             [DllImport ("__Internal")]
-            private static extern System.IntPtr Griffon_ExtensionVersion();
+            private static extern System.IntPtr acp_GriffonExtensionVersion();
             
-        #endif
+#endif
 
         /*--------------------------------------------------------
         * Methods
         *----------------------------------------------------------------------*/
 
-        public static bool GriffonRegisterExtension()
+        public static bool RegisterExtension()
         {
             #if UNITY_IPHONE && !UNITY_EDITOR
-                return Griffon_RegisterExtension();
+                return acp_RegisterExtension();
 
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){
                     return griffon.CallStatic<bool> ("registerExtension");
-                    
                 }
                 return false;
             #else
@@ -70,9 +69,8 @@ namespace com.adobe.marketing.mobile
 
         public static void StartSession(string url)
         {
-
             #if UNITY_IPHONE && !UNITY_EDITOR
-                Griffon_StartSession(url);
+                acp_StartSession(url);
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){
                     griffon.CallStatic("startSession", url);    
@@ -80,11 +78,10 @@ namespace com.adobe.marketing.mobile
             #endif
         }
 
-        public static string GriffonExtensionVersion()
-        {
-            
+        public static string ExtensionVersion()
+        {    
             #if UNITY_IPHONE && !UNITY_EDITOR
-                return Marshal.PtrToStringAnsi(Griffon_ExtensionVersion());
+                return Marshal.PtrToStringAnsi(acp_GriffonExtensionVersion());
             #elif UNITY_ANDROID && !UNITY_EDITOR
                 if(AndroidJNI.AttachCurrentThread() >= 0){
                     return griffon.CallStatic<string> ("extensionVersion");   
