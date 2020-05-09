@@ -32,7 +32,7 @@ Plugins for a Unity project use the following folder structure:
 
 #### Initialization
 
-##### Registering the extension with ACPCore
+##### Registering the extension with ACPGriffon
 > Note: It is required to initialize the SDK via native code inside your AppDelegate and MainApplication for iOS and Android respectively. For more information see how to initialize [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon-extension-to-your-app)
 ```
 using com.adobe.marketing.mobile;
