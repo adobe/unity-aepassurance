@@ -25,17 +25,17 @@ namespace com.adobe.marketing.mobile
         /* ===================================================================
         * Static Helper objects for our JNI access
         * =================================================================== */
-#if UNITY_ANDROID
+    #if UNITY_ANDROID
 
         static AndroidJavaClass griffon =
             new AndroidJavaClass("com.adobe.marketing.mobile.Griffon");
 
-#endif
+    #endif
 
         /* ===================================================================
         * extern declarations for iOS Methods
         * =================================================================== */
-#if UNITY_IPHONE
+    #if UNITY_IPHONE
 
             [DllImport ("__Internal")]
             private static extern bool acp_RegisterExtension();
@@ -46,7 +46,7 @@ namespace com.adobe.marketing.mobile
             [DllImport ("__Internal")]
             private static extern System.IntPtr acp_GriffonExtensionVersion();
             
-#endif
+    #endif
 
         /*--------------------------------------------------------
         * Methods

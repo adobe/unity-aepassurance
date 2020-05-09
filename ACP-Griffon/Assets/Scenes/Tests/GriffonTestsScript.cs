@@ -16,23 +16,17 @@ namespace Tests
 		{
 			yield return loadScene();
 			Assert.AreEqual("Griffon Registered:: True", getActualResult());
-			
 		}
 
 		[UnityTest]
 		public IEnumerator VerifyGriffonVersion()
 		{
-
 			yield return loadScene();
 			var gameObj = GameObject.Find("ButtonExtension");
 			var button = gameObj.GetComponent<Button>();
 			button.onClick.Invoke();
-
 			yield return new WaitForSeconds(1f);
-
-
 			Assert.AreEqual("Griffon Version: "+ (Application.platform == RuntimePlatform.Android ? "1.1.5" : "1.1.0"), getActualResult());
-
 		}
 
 		private string getActualResult() {
