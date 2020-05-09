@@ -8,7 +8,7 @@ PROJECT_DIR=$(CURRENT_PATH)/ACP-Griffon
 BIN_DIR=$(ROOT_DIR)/bin
 BUILD_DIR=$(BIN_DIR)/build_temp
 BUILD_PKG=ACPGriffon.unitypackage
-ASSETS=$(PROJECT_DIR)/Assets/Plugins
+ASSETS=Assets/Plugins
 
 # targets
 release: clean setup unity_build
