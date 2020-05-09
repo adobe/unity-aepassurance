@@ -21,9 +21,10 @@ Plugins for a Unity project use the following folder structure:
 
 ## Installation
 
-- Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpgriffon/tree/master/bin/ACPGriffon-0.0.1-Unity.zip) 
+- Download [ACPGriffon-0.0.1-Unity.zip](https://github.com/adobe/unity-acpgriffon/tree/master/bin/ACPGriffon-0.0.1-Unity.zip) 
 - Unzip `ACPGriffon-0.0.1-Unity.zip`
 - Import `ACPGriffon.unitypackage` via Assets-Import Package
+> Note: Unity Griffon plugin needs ACP Core Plugin to work. Import [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore#installation) to you project before using Griffon.
 
 ## Usage
 
@@ -32,7 +33,7 @@ Plugins for a Unity project use the following folder structure:
 #### Initialization
 
 ##### Registering the extension with ACPCore
-> Note: It is required to initialize the SDK via native code inside your AppDelegate and MainApplication for iOS and Android respectively. For more information see how to initialize [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon-extension-to-your-app).
+> Note: It is required to initialize the SDK via native code inside your AppDelegate and MainApplication for iOS and Android respectively. For more information see how to initialize [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon-extension-to-your-app)
 ```
 using com.adobe.marketing.mobile;
 using AOT;
@@ -42,14 +43,14 @@ public class MainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-      ACPGriffon.GriffonRegisterExtension();
+      ACPGriffon.RegisterExtension();
     }
 }
 ```
 
 ##### Getting the SDK version:
 ```cs
-  ACPGriffon.GriffonExtensionVersion();
+  string griffonVersion = ACPGriffon.ExtensionVersion();
 ```
 
 ##### Start Griffon session:
@@ -59,10 +60,15 @@ public class MainScript : MonoBehaviour
 ```
 
 ## Running Tests
+Tests are located at at *unity-acpgriffon/ACP-Griffon/Assets/Scenes/Tests*.
+> Note: Before running the tests ensure that you have Android or iOS phone/simulator connected.
 
+1. Select platform Android/iOS in Build Settings and choose test phone/simulator.
+1. Open Test Runner via __Window > General > Test Runner__
+1. Select the tests to run and hit Run Tests.
 
 ## Sample App
-Sample App is located at *unity-acpgriffon/ACP-Griffon/Assets/Demo*.
+Sample App is located at *unity-acpgriffon/ACP-Griffon/Assets/Scenes*.
 To build demo app for specific platform follow the below instructions.
 
 ###### Android
