@@ -41,7 +41,8 @@ public class GriffonScene : MonoBehaviour
         {
             ACPCore.SetApplication();
         }
-        
+
+        ACPCore.SetWrapperType();
         bool hasRegistered = ACPGriffon.RegisterExtension();
         resultText.text = "Griffon Registered:: " + hasRegistered.ToString();
         ACPCore.Start(HandleStartAdobeCallback);
