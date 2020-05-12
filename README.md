@@ -62,6 +62,26 @@ public class MainScript : MonoBehaviour
 ```
 > Note: Read more about [Griffon Session url](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#connecting-to-a-session)
 
+#### Start Griffon session using [Deeplink](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#connecting-to-a-session)
+
+##### Android
+Ensure that Assets/Plugin/Android/AndroidManifest.xml contains the following Intent-Filter in UnityPlayerActivity(or it's child class).
+```xml
+<activity android:name="com.unity3d.player.UnityPlayerActivity"
+                  android:theme="@style/UnityThemeSelector">
+    <intent-filter>
+         <action android:name="android.intent.action.VIEW" />
+         <category android:name="android.intent.category.DEFAULT" />
+         <category android:name="android.intent.category.BROWSABLE" />
+         <data android:scheme="grifflab" />
+    </intent-filter>
+</activity>    
+```
+> Note: Replace the scheme grifflab with your [scheme](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#creating-sessions).
+
+##### iOS
+Go to iOS Player setting and you scheme under supported URL scheme.
+
 ## Running Tests
 Tests are located at at *unity-acpgriffon/ACP-Griffon/Assets/Scenes/Tests*.
 > Note: Before running the tests ensure that you have Android or iOS phone/simulator connected.
