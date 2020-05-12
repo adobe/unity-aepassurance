@@ -48,6 +48,8 @@ public class MainScript : MonoBehaviour
 }
 ```
 
+##### [Start the ACP Core and set the Wrapper Type](https://github.com/adobe/unity-acpcore/blob/master/README.md#core)
+
 ##### Getting the SDK version:
 ```cs
   string griffonVersion = ACPGriffon.ExtensionVersion();
@@ -58,6 +60,7 @@ public class MainScript : MonoBehaviour
 ```cs
   ACPGriffon.StartSession(url);
 ```
+> Note: Read more about [Griffon Session url](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#connecting-to-a-session)
 
 ## Running Tests
 Tests are located at at *unity-acpgriffon/ACP-Griffon/Assets/Scenes/Tests*.
