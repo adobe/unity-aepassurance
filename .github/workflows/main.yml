@@ -36,5 +36,5 @@ jobs:
     # Output
     - uses: actions/upload-artifact@v1
       with:
-        name: ACPCorePackage
+        name: ACPGriffonPackage
         path: bin
