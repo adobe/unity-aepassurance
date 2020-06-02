@@ -8,7 +8,7 @@ PROJECT_DIR=$(CURRENT_PATH)/ACP-Griffon
 BIN_DIR=$(ROOT_DIR)/bin
 BUILD_DIR=$(BIN_DIR)/build_temp
 BUILD_PKG=ACPGriffon.unitypackage
-ASSETS=Assets/Plugins
+ASSETS=Assets/Plugins/android/AndroidManifest.xml Assets/Plugins/android/mainTemplate.gradle $(shell find ACP-Griffon/Assets/Plugins -type f -iname "*griffon*" -not -name "*.meta" | sed 's/.*ACP-Griffon*\///')
 
 # targets
 release: clean setup unity_build
