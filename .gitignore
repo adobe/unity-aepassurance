@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 Logs/
+build_temp/
 
 # Visual Studio cache directory
 .vs/
@@ -37,5 +38,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Core package files
+*[Co]re*
+*[Hh]elpers*
+*[Ii]dentity*
+*[Ll]ifecycle*
+*[Ss]ignal*
 
 *.DS_Store
