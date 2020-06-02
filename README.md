@@ -94,6 +94,11 @@ Tests are located at at *unity-acpgriffon/ACP-Griffon/Assets/Scenes/Tests*.
 Sample App is located at *unity-acpgriffon/ACP-Griffon/Assets/Scenes*.
 To build demo app for specific platform follow the below instructions.
 
+###### Add core plugin
+- Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/tree/master/bin/ACPCore-0.0.1-Unity.zip) 
+- Unzip `ACPCore-0.0.1-Unity.zip`
+- Import `ACPCore.unitypackage` via Assets->Import Package
+
 ###### Android
 1. Make sure you have an Android device connected.
 1. From the menu of the `Unity` app, select __File > Build Settings...__
