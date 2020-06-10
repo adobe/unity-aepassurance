@@ -163,7 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.UnityTestRunner.UnityTestRunner
+    Android: com.adobe.griffon
     iPhone: com.adobe.acpgriffon
   buildNumber: {}
   AndroidBundleVersionCode: 1
