@@ -26,7 +26,7 @@ namespace Tests
 			var button = gameObj.GetComponent<Button>();
 			button.onClick.Invoke();
 			yield return new WaitForSeconds(1f);
-			Assert.AreEqual("Griffon Version: "+ (Application.platform == RuntimePlatform.Android ? "1.1.5" : "1.1.0"), getActualResult());
+			Assert.AreEqual("Griffon Version: "+ (Application.platform == RuntimePlatform.Android ? "1.1.6" : "1.1.0"), getActualResult());
 		}
 
 		private string getActualResult() {
