@@ -1,4 +1,4 @@
-Notices for files contained in the ACPGriffon/Assets/Scenes directory:
+Notices for files contained in the AEPAssurance/Assets/Scenes directory:
 
 MIT License
 
