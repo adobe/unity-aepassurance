@@ -1,14 +1,14 @@
-VERSION=$(shell grep 'Plug-in v:' ACP-Griffon/Assets/Plugins/ACPGriffon.cs | sed 's/.*Plug-in v.*:[[:space:]]*\(.*\)[[:space:]]*/\1/')
-RELEASE_DIR=ACPGriffon-$(VERSION)-Unity
-MOBILE_DIR=$(RELEASE_DIR)/ACPGriffon
+VERSION=$(shell grep 'Plug-in v:' AEP-Assurance/Assets/Plugins/AEPAssurance.cs | sed 's/.*Plug-in v.*:[[:space:]]*\(.*\)[[:space:]]*/\1/')
+RELEASE_DIR=AEPAssurance-$(VERSION)-Unity
+MOBILE_DIR=$(RELEASE_DIR)/AEPAssurance
 UNITY_BIN=/Applications/Unity/Hub/Editor/2019.3.10f1/Unity.app/Contents/MacOS/Unity
 ROOT_DIR=.
 CURRENT_PATH=$(shell pwd)
-PROJECT_DIR=$(CURRENT_PATH)/ACP-Griffon
+PROJECT_DIR=$(CURRENT_PATH)/AEP-Assurance
 BIN_DIR=$(ROOT_DIR)/bin
 BUILD_DIR=$(BIN_DIR)/build_temp
-BUILD_PKG=ACPGriffon.unitypackage
-ASSETS=Assets/Plugins/android/AndroidManifest.xml Assets/Plugins/android/mainTemplate.gradle $(shell find ACP-Griffon/Assets/Plugins -type f -iname "*griffon*" -not -name "*.meta" | sed 's/.*ACP-Griffon*\///')
+BUILD_PKG=AEPAssurance.unitypackage
+ASSETS=Assets/Plugins/android/AndroidManifest.xml Assets/Plugins/android/mainTemplate.gradle $(shell find AEP-Assurance/Assets/Plugins -type f -iname "*assurance*" -not -name "*.meta" | sed 's/.*AEP-Assurance*\///')
 
 # targets
 release: clean setup unity_build

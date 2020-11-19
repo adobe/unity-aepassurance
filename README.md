@@ -1,4 +1,4 @@
-# Adobe Experience Platform - Griffon package for Unity apps
+# Adobe Experience Platform - Assurance package for Unity apps
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
@@ -21,19 +21,19 @@ Plugins for a Unity project use the following folder structure:
 
 ## Installation
 
-- Download [ACPGriffon-0.0.1-Unity.zip](https://github.com/adobe/unity-acpgriffon/tree/master/bin/ACPGriffon-0.0.1-Unity.zip) 
-- Unzip `ACPGriffon-0.0.1-Unity.zip`
-- Import `ACPGriffon.unitypackage` via Assets-Import Package
-> Note: Unity Griffon plugin needs ACP Core Plugin to work. Import [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore#installation) to you project before using Griffon.
+- Download [AEPAssurance-0.0.1-Unity.zip](https://github.com/adobe/unity-aepassurance/tree/master/bin/AEPAssurance-0.0.1-Unity.zip) 
+- Unzip `AEPAssurance-0.0.1-Unity.zip`
+- Import `AEPAssurance.unitypackage` via Assets-Import Package
+> Note: Unity Assurance plugin needs AEP Core Plugin to work. Import [AEPCore.unitypackage](https://github.com/adobe/unity-aepcore#installation) to you project before using Assurance.
 
 ## Usage
 
-### [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+### [Assurance](https://aep-sdks.gitbook.io/docs/beta/project-assurance)
 
 #### Initialization
 
-##### Registering the extension with ACPGriffon
-> Note: It is required to initialize the SDK via native code inside your AppDelegate and MainApplication for iOS and Android respectively. For more information see how to initialize [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon-extension-to-your-app)
+##### Registering the extension with AEPAssurance
+> Note: It is required to initialize the SDK via native code inside your AppDelegate and MainApplication for iOS and Android respectively. For more information see how to initialize [Assurance](https://aep-sdks.gitbook.io/docs/beta/project-assurance/set-up-project-assurance#add-project-assurance-extension-to-your-app)
 ```
 using com.adobe.marketing.mobile;
 using AOT;
@@ -43,26 +43,26 @@ public class MainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-      ACPGriffon.RegisterExtension();
+      AEPAssurance.RegisterExtension();
     }
 }
 ```
 
-##### [Start the ACP Core and set the Wrapper Type](https://github.com/adobe/unity-acpcore/blob/master/README.md#core)
+##### [Start the AEP Core and set the Wrapper Type](https://github.com/adobe/unity-aepcore/blob/master/README.md#core)
 
 ##### Getting the SDK version:
 ```cs
-  string griffonVersion = ACPGriffon.ExtensionVersion();
+  string assuranceVersion = AEPAssurance.ExtensionVersion();
 ```
 
-##### Start Griffon session:
-> Note: Refer [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon-extension-to-your-app) to learn more about Griffon session.
+##### Start Assurance session:
+> Note: Refer [Assurance](https://aep-sdks.gitbook.io/docs/beta/project-assurance/set-up-project-assurance#add-project-assurance-extension-to-your-app) to learn more about Assurance session.
 ```cs
-  ACPGriffon.StartSession(url);
+  AEPAssurance.StartSession(url);
 ```
-> Note: Read more about [Griffon Session url](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#connecting-to-a-session)
+> Note: Read more about [Assurance Session url](https://aep-sdks.gitbook.io/docs/beta/project-assurance/using-project-assurance#connecting-to-a-session)
 
-#### Start Griffon session using [Deeplink](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#connecting-to-a-session)
+#### Start Assurance session using [Deeplink](https://aep-sdks.gitbook.io/docs/beta/project-assurance/using-project-assurance#connecting-to-a-session)
 
 ##### Android
 Ensure that Assets/Plugin/Android/AndroidManifest.xml contains the following Intent-Filter in UnityPlayerActivity(or it's child class).
@@ -77,13 +77,13 @@ Ensure that Assets/Plugin/Android/AndroidManifest.xml contains the following Int
     </intent-filter>
 </activity>    
 ```
-> Note: Replace the scheme grifflab with your [scheme](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#creating-sessions).
+> Note: Replace the scheme grifflab with your [scheme](https://aep-sdks.gitbook.io/docs/beta/project-assurance/using-project-assurance#creating-sessions).
 
 ##### iOS
 Go to iOS Player setting and you scheme under supported URL scheme.
 
 ## Running Tests
-Tests are located at at *unity-acpgriffon/ACP-Griffon/Assets/Scenes/Tests*.
+Tests are located at at *unity-aepassurance/AEP-Assurance/Assets/Scenes/Tests*.
 > Note: Before running the tests ensure that you have Android or iOS phone/simulator connected.
 
 1. Select platform Android/iOS in Build Settings and choose test phone/simulator.
@@ -91,13 +91,13 @@ Tests are located at at *unity-acpgriffon/ACP-Griffon/Assets/Scenes/Tests*.
 1. Select the tests to run and hit Run Tests.
 
 ## Sample App
-Sample App is located at *unity-acpgriffon/ACP-Griffon/Assets/Scenes*.
+Sample App is located at *unity-aepassurance/AEP-Assurance/Assets/Scenes*.
 To build demo app for specific platform follow the below instructions.
 
 ###### Add core plugin
-- Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/tree/master/bin/ACPCore-0.0.1-Unity.zip) 
-- Unzip `ACPCore-0.0.1-Unity.zip`
-- Import `ACPCore.unitypackage` via Assets->Import Package
+- Download [AEPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-aepcore/tree/master/bin/AEPCore-0.0.1-Unity.zip) 
+- Unzip `AEPCore-0.0.1-Unity.zip`
+- Import `AEPCore.unitypackage` via Assets->Import Package
 
 ###### Android
 1. Make sure you have an Android device connected.
@@ -105,7 +105,7 @@ To build demo app for specific platform follow the below instructions.
 1. Select `Android` from the __Platform__ window
 1. If `Android` is not the active platform, hit the button that says __Switch Platform__ (it will only be available if you actually need to switch active platforms)
 1. Press the __Build And Run__ button
-1. You will be asked to provide a location to save the build. Make a new directory at *unity-acpgriffon/ACPGriffon/Builds* (this folder is in the .gitignore file)
+1. You will be asked to provide a location to save the build. Make a new directory at *unity-aepassurance/AEPAssurance/Builds* (this folder is in the .gitignore file)
 1. Name build whatever you want and press __Save__
 1. `Unity` will build an `apk` file and automatically deploy it to the connected device
 
@@ -114,7 +114,7 @@ To build demo app for specific platform follow the below instructions.
 1. Select `iOS` from the __Platform__ window
 1. If `iOS` is not the active platform, hit the button that says __Switch Platform__ (it will only be available if you actually need to switch active platforms)
 1. Press the __Build And Run__ button
-1. You will be asked to provide a location to save the build. Make a new directory at *unity-acpgriffon/ACPGriffon/Builds* (this folder is in the .gitignore file)
+1. You will be asked to provide a location to save the build. Make a new directory at *unity-aepassurance/AEPAssurance/Builds* (this folder is in the .gitignore file)
 1. Name build whatever you want and press __Save__
 1. `Unity` will create and open an `Xcode` project
 1. From the Xcode project run the app on a simulator.
@@ -126,8 +126,8 @@ Below is a list of additional Unity plugins from the AEP SDK suite:
 
 | Extension | GitHub | Unity Package |
 |-----------|--------|-----|
-| Core SDK | https://github.com/adobe/unity-acpcore | [ACPCore](https://github.com/adobe/unity-acpcore/raw/master/bin/ACPCore-0.0.1-Unity.zip)
-| Adobe Analytics | https://github.com/adobe/unity-acpanalytics | [ACPAnalytics](https://github.com/adobe/unity-acpanalytics/raw/master/bin/ACPAnalytics-0.0.1-Unity.zip)
+| Core SDK | https://github.com/adobe/unity-aepcore | [AEPCore](https://github.com/adobe/unity-aepcore/raw/master/bin/AEPCore-0.0.1-Unity.zip)
+| Adobe Analytics | https://github.com/adobe/unity-aepanalytics | [AEPAnalytics](https://github.com/adobe/unity-aepanalytics/raw/master/bin/AEPAnalytics-0.0.1-Unity.zip)
 
 ## Contributing
 
