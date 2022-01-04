@@ -28,7 +28,7 @@ public class AssuranceScene : MonoBehaviour
     public static void HandleStartAdobeCallback()
     { 
         print(LOG_TAG + "HandleStartAdobeCallback");
-        ACPCore.ConfigureWithAppID("94f571f308d5/00fc543a60e1/launch-c861fab912f7-development");    
+        ACPCore.ConfigureWithAppID("94f571f308d5/b6b34bf9c29f/launch-7226814f5897-development");    
     }
 
     // Start is called before the first frame update
@@ -53,7 +53,7 @@ public class AssuranceScene : MonoBehaviour
     //Assurance plugin methods.
     public void startAssuranceSession()
     {
-        const string url = "griffon://?adb_validation_sessionid=6b55294e-32d4-49e8-9279-e3fe12a9d309";
+        const string url = "griffon://?adb_validation_sessionid=22114332-bdae-41a0-9eb1-a70ad0992872";
         AEPAssurance.StartSession(url);
     }
 
