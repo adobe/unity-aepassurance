@@ -18,6 +18,7 @@ using AOT;
 public class AssuranceScene : MonoBehaviour
 {
     private const string LOG_TAG = "AssuranceScene:: ";
+    private const string APP_ID = "";
     //UI Fields
     public Text resultText; //For Testing purpose.
     public Button btnAssuranceStartSession;
@@ -28,7 +29,7 @@ public class AssuranceScene : MonoBehaviour
     public static void HandleStartAdobeCallback()
     { 
         print(LOG_TAG + "HandleStartAdobeCallback");
-        ACPCore.ConfigureWithAppID("94f571f308d5/b6b34bf9c29f/launch-7226814f5897-development");    
+        ACPCore.ConfigureWithAppID(APP_ID);    
     }
 
     // Start is called before the first frame update
@@ -53,7 +54,7 @@ public class AssuranceScene : MonoBehaviour
     //Assurance plugin methods.
     public void startAssuranceSession()
     {
-        const string url = "griffon://?adb_validation_sessionid=22114332-bdae-41a0-9eb1-a70ad0992872";
+        const string url = "";
         AEPAssurance.StartSession(url);
     }
 
