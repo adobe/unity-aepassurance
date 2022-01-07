@@ -103,7 +103,7 @@ Go to iOS Player setting and add your scheme under supported URL scheme.
 5. Click `Run all in player (platform)` to run the tests.
 
 ## Sample App
-Sample App is located at *unity-aepassurance/AEP-Assurance/Assets/Scenes*.
+Sample App is located at *unity-aepassurance/AEPAssurance/Assets/Scenes*.
 To build demo app for specific platform follow the below instructions.
 
 ###### Add core plugin
@@ -138,8 +138,9 @@ Below is a list of additional Unity plugins from the AEP SDK suite:
 
 | Extension | GitHub | Unity Package |
 |-----------|--------|-----|
-| Core SDK | https://github.com/adobe/unity-acpcore | [ACPCore](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-1.0.0-Unity.zip)
-| Adobe Analytics | https://github.com/adobe/unity-acpanalytics | [ACPAnalytics](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-1.0.0-Unity.zip)
+| ACPCore | https://github.com/adobe/unity-acpcore | [ACPCore](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-1.0.1-Unity.zip)
+| ACPAnalytics | https://github.com/adobe/unity-acpanalytics | [ACPAnalytics](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-1.0.0-Unity.zip)
+| ACPUserProfile | https://github.com/adobe/unity_acpuserprofile | [ACPUserProfile](https://github.com/adobe/unity_acpuserprofile/blob/master/bin/ACPUserProfile-1.0.0-Unity.zip)
 
 ## Contributing
 
