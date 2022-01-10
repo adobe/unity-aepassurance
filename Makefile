@@ -1,14 +1,14 @@
-VERSION=$(shell grep 'Plug-in v:' AEP-Assurance/Assets/Plugins/AEPAssurance.cs | sed 's/.*Plug-in v.*:[[:space:]]*\(.*\)[[:space:]]*/\1/')
+VERSION=$(shell grep 'Plug-in v:' AEPAssurance/Assets/Plugins/AEPAssurance.cs | sed 's/.*Plug-in v.*:[[:space:]]*\(.*\)[[:space:]]*/\1/')
 RELEASE_DIR=AEPAssurance-$(VERSION)-Unity
 MOBILE_DIR=$(RELEASE_DIR)/AEPAssurance
-UNITY_BIN=/Applications/Unity/Hub/Editor/2019.3.10f1/Unity.app/Contents/MacOS/Unity
+UNITY_BIN=/Applications/Unity/Hub/Editor/2019.4.34f1/Unity.app/Contents/MacOS/Unity
 ROOT_DIR=.
 CURRENT_PATH=$(shell pwd)
-PROJECT_DIR=$(CURRENT_PATH)/AEP-Assurance
+PROJECT_DIR=$(CURRENT_PATH)/AEPAssurance
 BIN_DIR=$(ROOT_DIR)/bin
 BUILD_DIR=$(BIN_DIR)/build_temp
 BUILD_PKG=AEPAssurance.unitypackage
-ASSETS=Assets/Plugins/android/AndroidManifest.xml Assets/Plugins/android/mainTemplate.gradle $(shell find AEP-Assurance/Assets/Plugins -type f -iname "*assurance*" -not -name "*.meta" | sed 's/.*AEP-Assurance*\///')
+ASSETS=Assets/Plugins/android/AndroidManifest.xml Assets/Plugins/android/mainTemplate.gradle $(shell find AEPAssurance/Assets/Plugins -type f -iname "*assurance*" -not -name "*.meta" | sed 's/.*AEPAssurance*\///')
 
 # targets
 release: clean setup unity_build
